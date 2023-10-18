@@ -193,11 +193,10 @@
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, breakable, interior hidden, enhanced, frame hidden, sharp corners, borderline west={3pt}{0pt}{shadecolor}]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[interior hidden, breakable, borderline west={3pt}{0pt}{shadecolor}, boxrule=0pt, sharp corners, enhanced, frame hidden]}{\end{tcolorbox}}\fi
 
-This document shows a bugged listing: Listing~\ref{lst-bugged-listing}.
-For comparison, the listing should render as the other listing:
-Listing~\ref{lst-normal}.
+This document shows a bugged listing and a normal listing for
+comparison. Their content is identical. They are on the last page.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -297,17 +296,15 @@ mollit anim id est laborum.
 
 \begin{codelisting}
 
-\caption{This listing is not bugged}
+\caption{\texttt{This listing is not bugged}}
 
-\hypertarget{lst-normal}{%
-\label{lst-normal}}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{In this listing, the line marking}
 \NormalTok{the end of the listing is not rendered}
 \NormalTok{in the right position.}
 
-\SpecialStringTok{$$ This line is inside the listing $$}
+\NormalTok{                                    This line is inside the listing}
 \end{Highlighting}
 \end{Shaded}
 
@@ -325,17 +322,15 @@ magna aliqua.
 
 \begin{codelisting}
 
-\caption{This listing is bugged}
+\caption{\texttt{This listing is bugged}}
 
-\hypertarget{lst-bugged-listing}{%
-\label{lst-bugged-listing}}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{In this listing, the line marking}
 \NormalTok{the end of the listing is not rendered}
 \NormalTok{in the right position.}
 
-\SpecialStringTok{$$ This line is inside the listing $$}
+\NormalTok{                                    This line is inside the listing}
 \end{Highlighting}
 \end{Shaded}
 
@@ -351,7 +346,7 @@ The line above mixes:
   a normal text line: \texttt{This\ text\ is\ outside\ the\ listing}
 \item
   a line from inside the code listing:
-  \VERB|\AttributeTok{$$ This line is inside the listing $$}|
+  \texttt{This\ line\ is\ inside\ the\ listing}
 \end{itemize}
 
 
